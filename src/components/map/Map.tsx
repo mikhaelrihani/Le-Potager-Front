@@ -25,7 +25,7 @@ const Map: React.FC = () => {
   const fetchDataFromDatabase = async (searchQuery: string) => {
     try {
       const response = await axios.get(
-        `http://floriancopez-server.eddi.cloud/opotager/api/gardens/search?city=${searchQuery}&dist=20`
+        `http://localhost:8080/Le-Potager-Back/public/api/gardens/search?city=${searchQuery}&dist=20`
       );
 
       if (!response.data.length) {
@@ -42,7 +42,7 @@ const Map: React.FC = () => {
   const fetchPictures = async (locationId) => {
     try {
       const response = await axios.get(
-        `http://floriancopez-server.eddi.cloud/opotager/api/gardens/${locationId}/pictures`
+        `http://localhost:8080/Le-Potager-Back/public/api/gardens/${locationId}/pictures`
       );
       return response.data;
     } catch (error) {

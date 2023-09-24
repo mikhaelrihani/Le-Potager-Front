@@ -22,7 +22,7 @@ const Register = () => {
   const authenticator = async () => {
     try {
       const response = await fetch(
-        "http://floriancopez-server.eddi.cloud/opotager/imagekit/auth"
+        "http://localhost:8080/opotager/imagekit/auth"
       );
 
       if (!response.ok) {
@@ -74,7 +74,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://floriancopez-server.eddi.cloud/opotager/api/users/",
+        "http://localhost:8080/opotager/api/users/",
         formData
       );
 
