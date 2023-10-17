@@ -22,7 +22,7 @@ const Register = () => {
   const authenticator = async () => {
     try {
       const response = await fetch(
-        "http://le-potager-back.local:8080/imagekit/auth"
+        "https://www.back.potager.mikabernik.com/imagekit/auth"
       );
 
       if (!response.ok) {
@@ -74,7 +74,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://le-potager-back.local:8080/api/users/",
+        "https://www.back.potager.mikabernik.com/api/users/",
         formData
       );
 

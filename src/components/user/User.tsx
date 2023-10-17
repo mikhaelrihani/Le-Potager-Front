@@ -28,7 +28,7 @@ const User = ({ isLogged, setIsLogged }) => {
 
     try {
       const response = await axios.post(
-        "http://le-potager-back.local:8080/api/login_check",
+        "https://www.back.potager.mikabernik.com/api/login_check",
         {
           username: logs.username,
           password: logs.password,
