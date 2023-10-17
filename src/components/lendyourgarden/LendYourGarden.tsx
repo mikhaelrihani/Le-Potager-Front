@@ -27,7 +27,7 @@ const LendYourGarden = () => {
   const authenticator = async () => {
     try {
       const response = await fetch(
-        "http://floriancopez-server.eddi.cloud/opotager/imagekit/auth"
+        "http://le-potager-back.local:8080/imagekit/auth"
       );
 
       if (!response.ok) {
@@ -72,7 +72,7 @@ const LendYourGarden = () => {
 
     try {
       const response = await axios.post(
-        "http://floriancopez-server.eddi.cloud/opotager/api/gardens/",
+        "http://le-potager-back.local:8080/api/gardens/",
         formData,
         {
           headers: {

@@ -19,13 +19,13 @@ const Card: React.FC = () => {
   const fetchData = async (locationId) => {
     try {
       const response = await axios.get(
-        `http://floriancopez-server.eddi.cloud/opotager/api/gardens/${locationId}`
+        `http://le-potager-back.local:8080/api/gardens/${locationId}`
       );
       const data = response.data;
       setLocation(data);
 
       const pictureResponse = await axios.get(
-        `http://floriancopez-server.eddi.cloud/opotager/api/gardens/${locationId}/pictures`
+        `http://le-potager-back.local:8080/api/gardens/${locationId}/pictures`
       );
       const pictureData = pictureResponse.data;
       setPictures(pictureData);

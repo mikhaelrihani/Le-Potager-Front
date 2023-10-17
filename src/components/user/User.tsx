@@ -28,7 +28,7 @@ const User = ({ isLogged, setIsLogged }) => {
 
     try {
       const response = await axios.post(
-        "http://floriancopez-server.eddi.cloud/opotager/api/login_check",
+        "http://le-potager-back.local:8080/api/login_check",
         {
           username: logs.username,
           password: logs.password,

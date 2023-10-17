@@ -25,7 +25,7 @@ const Map: React.FC = () => {
   const fetchDataFromDatabase = async (searchQuery: string) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/Le-Potager-Back/public/api/gardens/search?city=${searchQuery}&dist=20`
+        `https://www.back.potager.mikabernik.com/api/gardens/search?city=${searchQuery}&dist=800`
       );
 
       if (!response.data.length) {
@@ -42,7 +42,7 @@ const Map: React.FC = () => {
   const fetchPictures = async (locationId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/Le-Potager-Back/public/api/gardens/${locationId}/pictures`
+        `http://le-potager-back.local:8080/api/gardens/${locationId}/pictures`
       );
       return response.data;
     } catch (error) {
