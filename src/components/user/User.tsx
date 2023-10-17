@@ -28,6 +28,7 @@ const User = ({ isLogged, setIsLogged }) => {
 
     try {
       const response = await axios.post(
+        // "http://le-potager-back.local:8080/api/login_check",
         "https://www.back.potager.mikabernik.com/api/login_check",
         {
           username: logs.username,
@@ -37,11 +38,17 @@ const User = ({ isLogged, setIsLogged }) => {
 
       const token = response.data.token;
       const userId = response.data.data.id;
+      console.log(token);
       const currentUser = response.data.data.username;
-      Cookies.set("authToken", token, { sameSite: "None" });
-      Cookies.set("userId", userId, { sameSite: "None" });
-      Cookies.set("currentUser", currentUser, { SameSite: "None" });
+      Cookies.set("authToken", token, { sameSite: "None", secure: true });
+      Cookies.set("userId", userId, { sameSite: "None" , secure: true});
+      Cookies.set("currentUser", currentUser, { sameSite: "None" });
       setIsLogged(true);
+      setTimeout(() => {
+        // Récupérer le cookie après un délai
+        console.log(Cookies.get("userId"));
+        console.log(Cookies.get("authToken"));
+      }, 1000);
     } catch (error) {
       console.error(error);
       alert("une erreur est survenue");

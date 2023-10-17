@@ -27,7 +27,7 @@ const LendYourGarden = () => {
   const authenticator = async () => {
     try {
       const response = await fetch(
-        "http://floriancopez-server.eddi.cloud/opotager/imagekit/auth"
+        "https://www.back.potager.mikabernik.com/imagekit/auth"
       );
 
       if (!response.ok) {
@@ -62,6 +62,7 @@ const LendYourGarden = () => {
     event.preventDefault();
 
     const token = Cookies.get("authToken");
+   console.log(token);
     const userId = Cookies.get("userId");
     const userIdInt = parseInt(userId, 10);
 
