@@ -8,12 +8,20 @@ const Main = () => {
       <div className="relative">
         <img
           src="/garden-homepage.jpg"
+          alt="Image d'accueil du jardin"
           className="w-screen object-cover h-72 md:h-[500px] z-0"
         ></img>
         <div className="absolute inset-0 flex justify-center items-center md:mx-72">
+        <label htmlFor="search" className="sr-only">
+            Recherche
+          </label>
           <input
+            type="text"
+            id="search"
+            name="search"
             placeholder="Saisissez votre recherche"
-            className=" h-12 border-2 focus:outline-green-800 focus:outline-4 focus:outline-offset-0 rounded-full p-2 focus:outline-none bg-none md:w-[350px]"
+            className=" h-12 border-2 focus:outline-green-800 focus:outline-4 focus:outline-offset-0 
+            rounded-full p-2 focus:outline-none bg-none md:w-[350px]"
           />
         </div>
       </div>
@@ -21,6 +29,7 @@ const Main = () => {
         <div className="flex flex-col items-center my-12 md:w-1/3">
           <img
             src="/sprout-svgrepo-com.png"
+            alt="Image de pousse"
             className="w-12 h-12 md:w-20 md:h-20"
           />
           <p className="mt-6 text-justify md:px-14">
@@ -33,6 +42,7 @@ const Main = () => {
         <div className="flex flex-col items-center my-12 md:w-1/3">
           <img
             src="/leaf-plant-svgrepo-com.png"
+            alt="Image de feuille de plante"
             className="w-12 h-12 md:w-24 md:h-24"
           />
           <p className="mt-6 text-justify md:px-14">

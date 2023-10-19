@@ -72,6 +72,21 @@ const Register = () => {
   const handleSubmitForm = async (event) => {
     event.preventDefault();
 
+    if (!formData.username) {
+      alert("Le nom d'utilisateur est requis.");
+      return;
+    }
+  
+    if (!formData.email) {
+      alert("L'adresse e-mail est requise.");
+      return;
+    }
+  
+    if (!formData.password) {
+      alert("Le mot de passe est requis.");
+      return;
+    }
+    
     try {
       const response = await axios.post(
         "https://www.back.potager.mikabernik.com/api/users/",
